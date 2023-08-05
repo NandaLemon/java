@@ -1,0 +1,25 @@
+package com.javahelloword;
+
+public class VariableArgument {
+    public static void main(String[] args) {
+        sayCongrats("NAND", 80, 90, 79, 48);
+    }
+
+    private static void sayCongrats(String string, int i, int j, double d) {
+    }
+
+    static void sayCongrats(String name, int... values) {
+
+        int total = 0;
+        for (var value : values) {
+            total += value;
+        }
+        int finalvalue = total / values.length;
+
+        if (finalvalue >= 75) {
+            System.out.println("Selamat" + " " + name + ", Anda Lulus");
+        } else {
+            System.out.println("Maaf" + " " + name + ", Anda Gagal");
+        }
+    }
+}
